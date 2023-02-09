@@ -9,7 +9,7 @@ export default class Cart extends Component {
     return (
       this.props.cartItems.length && (
         <div className="cartItems" id="cart">
-          <table class="table table-striped text-center table-responsive table-bordered table-hover">
+          <table className="table table-striped text-center table-responsive table-bordered table-hover">
             <thead>
               <tr>
                 <th scope="col">ID</th>
@@ -48,7 +48,7 @@ export default class Cart extends Component {
                   <td>$ {product.price * product.qty}</td>
                   <td>
                     <i
-                      class="removeIcon bi bi-cart-x fs-3 text-danger"
+                      className="removeIcon bi bi-cart-x fs-3 text-danger"
                       onClick={() => this.props.removeFromCart(product)}
                     ></i>
                   </td>

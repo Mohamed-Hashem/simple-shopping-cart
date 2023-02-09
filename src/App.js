@@ -11,6 +11,17 @@ export default class App extends Component {
     };
   }
 
+  componentDidMount = () => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+    if (cartItems) {
+      this.setState({ cartItems });
+    }
+  };
+
+  addToLocalStorage = (data) => {
+    localStorage.setItem("cartItems", JSON.stringify(data));
+  };
+
   addToCart = (product) => {
     let cartItems = [...this.state.cartItems];
     const element = cartItems.find((elem) => elem.id === product.id);
@@ -23,6 +34,7 @@ export default class App extends Component {
       cartItems = [...cartItems, { ...product, qty: 1 }];
     }
 
+    this.addToLocalStorage(cartItems);
     this.setState({ cartItems });
   };
 
@@ -32,6 +44,7 @@ export default class App extends Component {
 
     if (element) {
       cartItems = cartItems.filter((p) => p.id !== product.id);
+      this.addToLocalStorage(cartItems);
     } else {
       alert("This Product is not in the Cart Items");
     }
@@ -50,7 +63,7 @@ export default class App extends Component {
     } else {
       cartItems = cartItems.filter((p) => p.id !== product.id);
     }
-
+    this.addToLocalStorage(cartItems);
     this.setState({ cartItems });
   };
   render() {
