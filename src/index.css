@@ -1,0 +1,71 @@
+@import url("bootstrap-icons/font/bootstrap-icons.css");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI";
+}
+
+nav {
+  box-shadow: #7a378b 0px 10px 10px;
+}
+
+main,
+.cartItems {
+  position: relative;
+  top: 125px;
+}
+
+.card {
+  min-height: 400px;
+  box-shadow: #7a378b 100px 100px 100px;
+}
+
+.card img {
+  height: 250px;
+  width: 250px;
+  transition: transform 0.3s;
+}
+
+.card img:hover {
+  transform: scale(1.2);
+}
+
+.box {
+  padding: 20px;
+  box-shadow: 20px 40px 20px #802c6e52;
+}
+
+.shoppingIcon {
+  position: relative;
+  font-size: 25px;
+}
+
+.shoppingIcon > span {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #17a2b8;
+}
+
+.text-white-50:hover {
+  color: #fff !important;
+}
+
+.text-white-50.active {
+  color: #fff !important;
+}
+
+.removeIcon {
+  cursor: pointer;
+}
+
+.removeIcon:hover {
+  color: darkblue !important;
+}
